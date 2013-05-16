@@ -34,33 +34,26 @@ class CoffeDB:
 
     def putPot(self, pot):
         # Pot: tuble containing numberToday and madeAt. ex: (3, datetime.now() )
-        self.cur.execute("INSERT INTO Pots(numberToday, madeAt) VALUES (?, ?)", pot )
+        try:
+            self.cur.execute("INSERT INTO Pots(numberToday, madeAt) VALUES (?, ?)", pot )
+            return True
+        except sqlite3.Error, e:
+            print "Error %s:" % e.args[0]
+            return False
+
+
+    def getNewestPot(self):
+        try:
+            return self.cur.execute("SELECT max(id) FROM Pots")
+        except sqlite3.Error, e:
+            print "Error %s:" % e.args[0]
+            return None
+        return True
 
 
     def install_db():
-        pass
-
-try:
-    db = CoffeDB('koffe.db')
-    db.connect()
+        self.cur.execute("DROP TABLE IF EXISTS Pots")
+        self.cur.execute("CREATE TABLE Pots(Id INTEGER PRIMARY KEY AUTOINCREMENT, numberToday INT, madeAt TIMESTAMP)")
 
 
-con = None
-
-try:
-    con = sqlite3.connect('kaffe.db')
-    cur = con.cursor()
-
-    if len(sys.argv) > 1 and sys.argv[1] == "install":
-        install(cur)
-
-    cur.executemany("INSERT INTO Pots(numberToday, madeAt) VALUES (?, ?)", testPot )
-    data = cur.execute('SELECT * FROM Pots')
-    print data.fetchall()
-
-
-
-def install(cur):
-    cur.execute("DROP TABLE IF EXISTS Pots")
-    cur.execute("CREATE TABLE Pots(Id INTEGER PRIMARY KEY AUTOINCREMENT, numberToday INT, madeAt TIMESTAMP)")
 
