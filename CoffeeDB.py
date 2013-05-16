@@ -64,10 +64,24 @@ class CoffeeDB:
     def getDay(self, day, month=str(datetime.month), year=str(datetime.year) ):
         print day,'-',month, '-', year
 
-    def getMonth(self, month, year=str(datetime.year)):
-        print month, '-', year
+    def getMonth(self, month, year=""):
+        if year == "": year = str(datetime.now().year)
+        if month == "": month = str(datetime.now().month)
+        try:
+            data = self.cur.execute("SELECT numberToday, madeAt FROM Pots "+\
+    "WHERE DATETIME(pots.madeAt) < '"+year+"-"+month+"-31 23:59:59' AND "+\
+    "DATETIME(pots.madeAt) > '"+year+"-"+month+"-01 00:00:00' ORDER BY madeAt")
+            result = []
+            for row in data:
+                result.append(Pot(row[0], row[1]))
+            return tuple(result)
 
-    def getYear(self, year ):
+        except sqlite3.Error, e:
+            print "Error %s:" % e.args[0]
+            return None
+
+    def getYear(self, year):
+        if year == "": year = str(datetime.now().year)
         try:
             data = self.cur.execute("SELECT numberToday, madeAt FROM Pots "+\
     "WHERE DATETIME(pots.madeAt) < '"+year+"-12-31 23:59:59' AND "+\
@@ -81,7 +95,6 @@ class CoffeeDB:
             print "Error %s:" % e.args[0]
             return None
 
-
     def getAll(self):
         try:
             data = self.cur.execute("SELECT numberToday, madeAt FROM Pots ORDER BY madeAt")
@@ -94,7 +107,6 @@ class CoffeeDB:
             print "Error %s:" % e.args[0]
             return None
 
-
     def install_db(self):
         self.cur.execute("DROP TABLE IF EXISTS Pots")
         self.cur.execute("CREATE TABLE Pots(id INTEGER PRIMARY KEY AUTOINCREMENT,"+\
@@ -106,12 +118,12 @@ def main():
     DEBUG = True
     testPots = (
         Pot(1, datetime.now().replace(year=2012)),
-        Pot(1, datetime.now().replace(month=1) - timedelta(hours=1)),
-        Pot(2, datetime.now().replace(month=1)),
-        Pot(1, datetime.now() - timedelta(weeks=1)),
-        Pot(1, datetime.now() - timedelta(hours=2)),
-        Pot(2, datetime.now() - timedelta(hours=1)),
-        Pot(3, datetime.now())
+        Pot(1, datetime.now().replace(month=1, hour=12)),
+        Pot(2, datetime.now().replace(month=1, hour=15)),
+        Pot(1, datetime.now().replace(day=15)),
+        Pot(1, datetime.now().replace(hour=2)),
+        Pot(2, datetime.now().replace(hour=12)),
+        Pot(3, datetime.now().replace(hour=16))
     )
 
     db = CoffeeDB('coffee_test.db')
@@ -122,20 +134,27 @@ def main():
         for pot in testPots:
             print db.putPot(pot)
 
-    # Newest
-    data = db.getNewestPot()
-    print '-', data
-
-    # Year
-    data = db.getYear("2012")
-    print '--', data
-
-    db.getMonth("05")
-    db.getDay("")
 
     # All
     data = db.getAll()
-    print '---', data
+    print 'All - ', data
+
+    # Newest
+    data = db.getNewestPot()
+    print 'Newest -', data
+
+    # Year
+    data = db.getYear("2012")
+    print 'Year -', data
+
+    # Month
+    data = db.getMonth("01")
+    print 'Month -', data
+
+    # Day
+    data = db.getDay("17")
+    print 'Day -', data
+
 
     db.disconnect()
 
