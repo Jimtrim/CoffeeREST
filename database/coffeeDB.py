@@ -70,8 +70,12 @@ class CoffeeDB:
     ## Defaults to the current day, month and year
     def getDay(self, day="", month="", year=""):
         if year == "": year = str(datetime.now().year)
-        if month == "": month = str(datetime.now().month)
-        if day == "": day = str(datetime.now().day)
+        if month == "":
+            month = str(datetime.now().month)
+            if len(month) < 2: month = "0"+month
+        if day == "":
+            day = str(datetime.now().day)
+            if len(day) < 2: day = "0"+day
 
         ts = datetime.strptime(day+month+year, "%d%m%Y").date()
 
@@ -95,7 +99,10 @@ class CoffeeDB:
     ## Defaults to the current month and year
     def getMonth(self, month="", year=""):
         if year == "": year = str(datetime.now().year)
-        if month == "": month = str(datetime.now().month)
+        if month == "":
+            month = str(datetime.now().month)
+            if len(month) < 2: month = "0"+month
+
         try:
             data = self.cur.execute("SELECT numberToday, madeAt FROM Pots "+\
     "WHERE DATETIME(pots.madeAt) < '"+year+"-"+month+"-31 23:59:59' AND "+\
@@ -156,7 +163,7 @@ def main(INSTALL=False, DEBUG=False):
 
     testPots = (
         Pot(1, datetime.now().replace(year=2012)),
-        Pot(1, datetime.now().replace(month=1, day=1, hour=12)),
+        Pot(1, datetime.now().replace(month=1, hour=12)),
         Pot(2, datetime.now().replace(month=1, hour=15)),
         Pot(1, datetime.now().replace(day=15)),
         Pot(1, datetime.now().replace(hour=2)),
@@ -176,7 +183,7 @@ def main(INSTALL=False, DEBUG=False):
     print 'All - ', db.getAll()
     print 'Newest -', db.getNewestPot()
     print 'Year -', db.getYear("2012")
-    print 'Month -', db.getMonth("01")
+    print 'Month -', db.getMonth()
     print 'Day -', db.getDay("15")
 
     db.disconnect()
