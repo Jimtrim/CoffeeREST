@@ -4,7 +4,7 @@
  */
 
 exports.index = function(req, res){
-  res.send("respond with a resource");
+	res.send("respond with a resource");
 };
  
 exports.online = {
@@ -12,7 +12,7 @@ exports.online = {
 		res.send("ONLINE: Index page");
 	},
 	"all": function(req, res){
-	  res.send("ONLINE: All pots page");
+		res.send("ONLINE: All pots page");
 	},
 };
  
