@@ -1,4 +1,5 @@
 *~
-*.pycnode_modules/
+*.pyc
+node_modules/
 
 .vagrant/

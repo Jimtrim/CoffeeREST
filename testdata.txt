@@ -1,333 +1,333 @@
-{ "date" TODO "", 	"time":"04. March 10:02:17"} 
-{ "date" TODO "", 	"time":"04. March 12:12:04"} 
-{ "date" TODO "", 	"time":"04. March 13:52:08"} 
-{ "date" TODO "", 	"time":"04. March 14:57:47"} 
-{ "date" TODO "", 	"time":"04. March 18:57:12"} 
-{ "date" TODO "", 	"time":"04. March 18:57:51"} 
-{ "date" TODO "", 	"time":"05. March 07:51:47"} 
-{ "date" TODO "", 	"time":"05. March 10:12:27"} 
-{ "date" TODO "", 	"time":"05. March 14:03:28"} 
-{ "date" TODO "", 	"time":"05. March 15:39:52"} 
-{ "date" TODO "", 	"time":"05. March 19:59:50"} 
-{ "date" TODO "", 	"time":"06. March 09:39:16"} 
-{ "date" TODO "", 	"time":"06. March 13:10:59"} 
-{ "date" TODO "", 	"time":"06. March 17:31:59"} 
-{ "date" TODO "", 	"time":"07. March 08:12:28"} 
-{ "date" TODO "", 	"time":"07. March 10:26:44"} 
-{ "date" TODO "", 	"time":"07. March 12:33:38"} 
-{ "date" TODO "", 	"time":"07. March 14:44:18"} 
-{ "date" TODO "", 	"time":"07. March 15:47:20"} 
-{ "date" TODO "", 	"time":"08. March 09:34:47"} 
-{ "date" TODO "", 	"time":"08. March 11:40:14"} 
-{ "date" TODO "", 	"time":"08. March 12:39:14"} 
-{ "date" TODO "", 	"time":"08. March 13:03:03"} 
-{ "date" TODO "", 	"time":"08. March 13:22:00"} 
-{ "date" TODO "", 	"time":"08. March 15:27:55"} 
-{ "date" TODO "", 	"time":"08. March 22:15:54"} 
-{ "date" TODO "", 	"time":"09. March 14:22:45"} 
-{ "date" TODO "", 	"time":"10. March 19:20:14"} 
-{ "date" TODO "", 	"time":"11. March 10:01:39"} 
-{ "date" TODO "", 	"time":"12. March 10:02:40"} 
-{ "date" TODO "", 	"time":"12. March 14:04:08"} 
-{ "date" TODO "", 	"time":"12. March 15:35:51"} 
-{ "date" TODO "", 	"time":"12. March 18:48:23"} 
-{ "date" TODO "", 	"time":"13. March 08:55:57"} 
-{ "date" TODO "", 	"time":"13. March 11:09:43"} 
-{ "date" TODO "", 	"time":"13. March 15:02:45"} 
-{ "date" TODO "", 	"time":"14. March 09:55:50"} 
-{ "date" TODO "", 	"time":"14. March 11:37:26"} 
-{ "date" TODO "", 	"time":"14. March 12:20:27"} 
-{ "date" TODO "", 	"time":"14. March 13:10:14"} 
-{ "date" TODO "", 	"time":"14. March 15:10:02"} 
-{ "date" TODO "", 	"time":"14. March 15:48:21"} 
-{ "date" TODO "", 	"time":"15. March 10:21:41"} 
-{ "date" TODO "", 	"time":"15. March 11:37:59"} 
-{ "date" TODO "", 	"time":"15. March 12:54:29"} 
-{ "date" TODO "", 	"time":"15. March 13:49:19"} 
-{ "date" TODO "", 	"time":"15. March 17:08:04"} 
-{ "date" TODO "", 	"time":"15. March 17:55:00"} 
-{ "date" TODO "", 	"time":"15. March 19:22:43"} 
-{ "date" TODO "", 	"time":"15. March 19:26:09"} 
-{ "date" TODO "", 	"time":"15. March 19:34:38"} 
-{ "date" TODO "1", 	"time":"15. March 19:35:16"} 
-{ "date" TODO "1", 	"time":"15. March 19:41:23"} 
-{ "date" TODO "1", 	"time":"15. March 19:42:03"} 
-{ "date" TODO "1", 	"time":"15. March 19:42:44"} 
-{ "date" TODO "1", 	"time":"15. March 19:52:56"} 
-{ "date" TODO "1", 	"time":"15. March 20:21:02"} 
-{ "date" TODO "1", 	"time":"15. March 23:04:50"} 
-{ "date" TODO "", 	"time":"16. March 13:58:54"} 
-{ "date" TODO "", 	"time":"16. March 13:59:37"} 
-{ "date" TODO "", 	"time":"16. March 14:02:08"} 
-{ "date" TODO "", 	"time":"16. March 18:52:44"} 
-{ "date" TODO "", 	"time":"16. March 20:22:21"} 
-{ "date" TODO "", 	"time":"16. March 23:41:41"} 
-{ "date" TODO "", 	"time":"17. March 00:33:13"} 
-{ "date" TODO "", 	"time":"17. March 03:32:15"} 
-{ "date" TODO "", 	"time":"17. March 12:57:19"} 
-{ "date" TODO "", 	"time":"17. March 16:44:10"} 
-{ "date" TODO "", 	"time":"18. March 09:00:46"} 
-{ "date" TODO "", 	"time":"18. March 11:24:46"} 
-{ "date" TODO "", 	"time":"18. March 15:00:10"} 
-{ "date" TODO "", 	"time":"18. March 17:00:07"} 
-{ "date" TODO "", 	"time":"19. March 10:08:48"} 
-{ "date" TODO "", 	"time":"19. March 12:57:42"} 
-{ "date" TODO "", 	"time":"19. March 14:05:35"} 
-{ "date" TODO "", 	"time":"19. March 14:17:44"} 
-{ "date" TODO "", 	"time":"19. March 14:47:04"} 
-{ "date" TODO "", 	"time":"19. March 15:28:58"} 
-{ "date" TODO "", 	"time":"19. March 19:01:48"} 
-{ "date" TODO "", 	"time":"20. March 10:07:48"} 
-{ "date" TODO "", 	"time":"20. March 10:15:38"} 
-{ "date" TODO "", 	"time":"20. March 12:05:45"} 
-{ "date" TODO "", 	"time":"20. March 12:40:30"} 
-{ "date" TODO "", 	"time":"20. March 16:14:35"} 
-{ "date" TODO "", 	"time":"20. March 17:23:23"} 
-{ "date" TODO "", 	"time":"21. March 10:30:08"} 
-{ "date" TODO "", 	"time":"21. March 12:07:54"} 
-{ "date" TODO "", 	"time":"21. March 12:14:50"} 
-{ "date" TODO "", 	"time":"21. March 12:53:12"} 
-{ "date" TODO "", 	"time":"21. March 14:34:51"} 
-{ "date" TODO "", 	"time":"21. March 14:48:32"} 
-{ "date" TODO "", 	"time":"21. March 15:05:21"} 
-{ "date" TODO "", 	"time":"22. March 08:26:43"} 
-{ "date" TODO "", 	"time":"22. March 10:25:33"} 
-{ "date" TODO "", 	"time":"22. March 14:34:50"} 
-{ "date" TODO "", 	"time":"22. March 14:35:22"} 
-{ "date" TODO "", 	"time":"23. March 10:15:40"} 
-{ "date" TODO "", 	"time":"26. March 21:37:06"} 
-{ "date" TODO "", 	"time":"26. March 21:42:46"} 
-{ "date" TODO "", 	"time":"26. March 21:50:00"} 
-{ "date" TODO "", 	"time":"26. March 21:58:44"} 
-{ "date" TODO "", 	"time":"26. March 22:11:41"} 
-{ "date" TODO "", 	"time":"02. April 12:51:38"} 
-{ "date" TODO "", 	"time":"02. April 14:20:46"} 
-{ "date" TODO "", 	"time":"03. April 09:09:56"} 
-{ "date" TODO "", 	"time":"03. April 10:11:51"} 
-{ "date" TODO "", 	"time":"03. April 14:10:10"} 
-{ "date" TODO "", 	"time":"03. April 19:58:38"} 
-{ "date" TODO "", 	"time":"04. April 08:44:14"} 
-{ "date" TODO "", 	"time":"04. April 12:14:28"} 
-{ "date" TODO "", 	"time":"04. April 14:03:03"} 
-{ "date" TODO "", 	"time":"04. April 16:35:49"} 
-{ "date" TODO "", 	"time":"05. April 10:36:24"} 
-{ "date" TODO "", 	"time":"07. April 07:35:01"} 
-{ "date" TODO "", 	"time":"07. April 13:39:20"} 
-{ "date" TODO "", 	"time":"07. April 18:29:57"} 
-{ "date" TODO "", 	"time":"08. April 07:10:56"} 
-{ "date" TODO "", 	"time":"08. April 09:10:04"} 
-{ "date" TODO "", 	"time":"08. April 11:22:48"} 
-{ "date" TODO "", 	"time":"08. April 12:22:31"} 
-{ "date" TODO "", 	"time":"08. April 17:24:38"} 
-{ "date" TODO "", 	"time":"09. April 06:59:32"} 
-{ "date" TODO "", 	"time":"09. April 09:55:18"} 
-{ "date" TODO "", 	"time":"09. April 10:59:04"} 
-{ "date" TODO "", 	"time":"09. April 14:09:52"} 
-{ "date" TODO "", 	"time":"09. April 16:19:02"} 
-{ "date" TODO "", 	"time":"09. April 17:14:35"} 
-{ "date" TODO "", 	"time":"09. April 21:07:58"} 
-{ "date" TODO "", 	"time":"10. April 06:57:17"} 
-{ "date" TODO "", 	"time":"10. April 08:39:08"} 
-{ "date" TODO "", 	"time":"10. April 09:58:36"} 
-{ "date" TODO "", 	"time":"10. April 13:38:05"} 
-{ "date" TODO "", 	"time":"11. April 09:24:44"} 
-{ "date" TODO "", 	"time":"11. April 09:39:21"} 
-{ "date" TODO "", 	"time":"11. April 10:43:21"} 
-{ "date" TODO "", 	"time":"11. April 12:31:02"} 
-{ "date" TODO "", 	"time":"11. April 15:28:49"} 
-{ "date" TODO "", 	"time":"12. April 08:56:47"} 
-{ "date" TODO "", 	"time":"12. April 10:27:22"} 
-{ "date" TODO "", 	"time":"12. April 15:39:10"} 
-{ "date" TODO "", 	"time":"12. April 16:17:29"} 
-{ "date" TODO "", 	"time":"12. April 16:18:45"} 
-{ "date" TODO "", 	"time":"12. April 16:20:47"} 
-{ "date" TODO "", 	"time":"14. April 12:21:07"} 
-{ "date" TODO "", 	"time":"15. April 08:14:05"} 
-{ "date" TODO "", 	"time":"15. April 11:30:19"} 
-{ "date" TODO "", 	"time":"15. April 11:38:27"} 
-{ "date" TODO "", 	"time":"15. April 16:13:57"} 
-{ "date" TODO "", 	"time":"16. April 07:56:49"} 
-{ "date" TODO "", 	"time":"16. April 10:11:18"} 
-{ "date" TODO "", 	"time":"16. April 13:57:06"} 
-{ "date" TODO "", 	"time":"16. April 13:58:34"} 
-{ "date" TODO "", 	"time":"16. April 16:53:10"} 
-{ "date" TODO "", 	"time":"17. April 09:02:13"} 
-{ "date" TODO "", 	"time":"17. April 11:36:36"} 
-{ "date" TODO "", 	"time":"17. April 13:54:13"} 
-{ "date" TODO "", 	"time":"17. April 18:28:06"} 
-{ "date" TODO "", 	"time":"18. April 08:47:04"} 
-{ "date" TODO "", 	"time":"18. April 14:21:22"} 
-{ "date" TODO "", 	"time":"18. April 17:33:35"} 
-{ "date" TODO "", 	"time":"19. April 06:46:32"} 
-{ "date" TODO "", 	"time":"19. April 10:12:05"} 
-{ "date" TODO "", 	"time":"19. April 11:06:02"} 
-{ "date" TODO "", 	"time":"19. April 12:28:04"} 
-{ "date" TODO "", 	"time":"19. April 13:52:00"} 
-{ "date" TODO "", 	"time":"20. April 14:00:11"} 
-{ "date" TODO "", 	"time":"20. April 16:25:11"} 
-{ "date" TODO "", 	"time":"21. April 10:41:57"} 
-{ "date" TODO "", 	"time":"22. April 07:58:28"} 
-{ "date" TODO "", 	"time":"22. April 11:11:09"} 
-{ "date" TODO "", 	"time":"22. April 12:07:02"} 
-{ "date" TODO "", 	"time":"22. April 14:07:57"} 
-{ "date" TODO "", 	"time":"22. April 15:20:19"} 
-{ "date" TODO "", 	"time":"22. April 16:41:52"} 
-{ "date" TODO "", 	"time":"23. April 09:13:57"} 
-{ "date" TODO "", 	"time":"23. April 09:25:55"} 
-{ "date" TODO "", 	"time":"23. April 12:12:19"} 
-{ "date" TODO "", 	"time":"23. April 12:36:39"} 
-{ "date" TODO "", 	"time":"23. April 14:18:21"} 
-{ "date" TODO "", 	"time":"24. April 07:41:22"} 
-{ "date" TODO "", 	"time":"24. April 08:31:04"} 
-{ "date" TODO "", 	"time":"24. April 10:12:01"} 
-{ "date" TODO "", 	"time":"24. April 17:35:45"} 
-{ "date" TODO "", 	"time":"25. April 08:33:33"} 
-{ "date" TODO "", 	"time":"25. April 10:25:34"} 
-{ "date" TODO "", 	"time":"25. April 12:14:06"} 
-{ "date" TODO "", 	"time":"25. April 13:31:14"} 
-{ "date" TODO "", 	"time":"26. April 08:08:50"} 
-{ "date" TODO "", 	"time":"26. April 10:07:03"} 
-{ "date" TODO "", 	"time":"26. April 12:00:15"} 
-{ "date" TODO "", 	"time":"28. April 09:55:10"} 
-{ "date" TODO "", 	"time":"29. April 08:30:02"} 
-{ "date" TODO "", 	"time":"29. April 12:35:56"} 
-{ "date" TODO "", 	"time":"29. April 15:20:30"} 
-{ "date" TODO "", 	"time":"30. April 09:29:35"} 
-{ "date" TODO "", 	"time":"30. April 13:19:19"} 
-{ "date" TODO "", 	"time":"30. April 16:09:58"} 
-{ "date" TODO "", 	"time":"30. April 19:48:35"} 
-{ "date" TODO "", 	"time":"01. May 10:12:13"} 
-{ "date" TODO "", 	"time":"01. May 12:46:59"} 
-{ "date" TODO "", 	"time":"01. May 14:59:41"} 
-{ "date" TODO "", 	"time":"02. May 07:55:54"} 
-{ "date" TODO "", 	"time":"02. May 15:09:34"} 
-{ "date" TODO "", 	"time":"03. May 07:55:54"} 
-{ "date" TODO "", 	"time":"03. May 11:12:16"} 
-{ "date" TODO "", 	"time":"04. May 05:50:31"} 
-{ "date" TODO "", 	"time":"05. May 09:54:24"} 
-{ "date" TODO "", 	"time":"05. May 15:36:18"} 
-{ "date" TODO "", 	"time":"05. May 18:50:19"} 
-{ "date" TODO "", 	"time":"05. May 18:56:47"} 
-{ "date" TODO "", 	"time":"06. May 08:00:00"} 
-{ "date" TODO "", 	"time":"06. May 11:58:32"} 
-{ "date" TODO "", 	"time":"06. May 16:54:02"} 
-{ "date" TODO "", 	"time":"07. May 07:48:09"} 
-{ "date" TODO "", 	"time":"07. May 10:36:45"} 
-{ "date" TODO "", 	"time":"07. May 11:37:34"} 
-{ "date" TODO "", 	"time":"07. May 13:59:19"} 
-{ "date" TODO "", 	"time":"07. May 15:07:35"} 
-{ "date" TODO "", 	"time":"08. May 07:55:34"} 
-{ "date" TODO "", 	"time":"08. May 09:59:31"} 
-{ "date" TODO "", 	"time":"08. May 11:58:00"} 
-{ "date" TODO "", 	"time":"08. May 12:15:21"} 
-{ "date" TODO "", 	"time":"08. May 13:39:24"} 
-{ "date" TODO "", 	"time":"09. May 08:36:22"} 
-{ "date" TODO "", 	"time":"09. May 12:26:05"} 
-{ "date" TODO "", 	"time":"09. May 14:46:44"} 
-{ "date" TODO "", 	"time":"09. May 17:19:12"} 
-{ "date" TODO "", 	"time":"10. May 08:07:28"} 
-{ "date" TODO "", 	"time":"10. May 12:47:57"} 
-{ "date" TODO "", 	"time":"10. May 13:49:56"} 
-{ "date" TODO "", 	"time":"10. May 14:42:35"} 
-{ "date" TODO "", 	"time":"11. May 09:55:40"} 
-{ "date" TODO "", 	"time":"11. May 13:38:50"} 
-{ "date" TODO "", 	"time":"11. May 15:12:24"} 
-{ "date" TODO "", 	"time":"12. May 09:42:43"} 
-{ "date" TODO "", 	"time":"12. May 11:40:33"} 
-{ "date" TODO "", 	"time":"12. May 13:36:38"} 
-{ "date" TODO "", 	"time":"12. May 15:35:27"} 
-{ "date" TODO "", 	"time":"13. May 09:18:48"} 
-{ "date" TODO "", 	"time":"13. May 10:56:31"} 
-{ "date" TODO "", 	"time":"13. May 11:50:32"} 
-{ "date" TODO "", 	"time":"13. May 15:32:42"} 
-{ "date" TODO "", 	"time":"14. May 08:21:05"} 
-{ "date" TODO "", 	"time":"14. May 08:54:29"} 
-{ "date" TODO "", 	"time":"14. May 12:45:11"} 
-{ "date" TODO "", 	"time":"14. May 13:18:39"} 
-{ "date" TODO "", 	"time":"14. May 13:23:57"} 
-{ "date" TODO "", 	"time":"15. May 08:09:01"} 
-{ "date" TODO "", 	"time":"15. May 10:17:52"} 
-{ "date" TODO "", 	"time":"15. May 12:01:26"} 
-{ "date" TODO "", 	"time":"15. May 13:04:41"} 
-{ "date" TODO "", 	"time":"15. May 13:06:43"} 
-{ "date" TODO "", 	"time":"15. May 16:14:31"} 
-{ "date" TODO "", 	"time":"16. May 07:37:59"} 
-{ "date" TODO "", 	"time":"16. May 13:43:30"} 
-{ "date" TODO "", 	"time":"16. May 15:26:06"} 
-{ "date" TODO "", 	"time":"17. May 08:31:04"} 
-{ "date" TODO "", 	"time":"18. May 11:14:42"} 
-{ "date" TODO "", 	"time":"18. May 14:25:19"} 
-{ "date" TODO "", 	"time":"18. May 14:29:11"} 
-{ "date" TODO "", 	"time":"18. May 15:11:56"} 
-{ "date" TODO "", 	"time":"19. May 09:47:40"} 
-{ "date" TODO "", 	"time":"19. May 18:18:12"} 
-{ "date" TODO "", 	"time":"20. May 10:02:28"} 
-{ "date" TODO "", 	"time":"21. May 08:03:32"} 
-{ "date" TODO "", 	"time":"21. May 12:41:47"} 
-{ "date" TODO "", 	"time":"21. May 14:06:35"} 
-{ "date" TODO "", 	"time":"21. May 16:43:41"} 
-{ "date" TODO "", 	"time":"21. May 16:51:09"} 
-{ "date" TODO "", 	"time":"22. May 08:41:47"} 
-{ "date" TODO "", 	"time":"22. May 10:34:27"} 
-{ "date" TODO "", 	"time":"22. May 13:08:34"} 
-{ "date" TODO "", 	"time":"22. May 13:58:45"} 
-{ "date" TODO "", 	"time":"22. May 14:47:19"} 
-{ "date" TODO "", 	"time":"22. May 16:55:04"} 
-{ "date" TODO "", 	"time":"22. May 17:47:13"} 
-{ "date" TODO "", 	"time":"23. May 08:18:39"} 
-{ "date" TODO "", 	"time":"23. May 14:19:54"} 
-{ "date" TODO "", 	"time":"23. May 16:32:33"} 
-{ "date" TODO "", 	"time":"23. May 17:39:52"} 
-{ "date" TODO "", 	"time":"23. May 17:43:34"} 
-{ "date" TODO "", 	"time":"24. May 08:01:54"} 
-{ "date" TODO "", 	"time":"24. May 12:10:49"} 
-{ "date" TODO "", 	"time":"24. May 12:17:47"} 
-{ "date" TODO "", 	"time":"24. May 18:37:06"} 
-{ "date" TODO "", 	"time":"25. May 08:53:12"} 
-{ "date" TODO "", 	"time":"26. May 07:57:36"} 
-{ "date" TODO "", 	"time":"26. May 15:06:31"} 
-{ "date" TODO "", 	"time":"26. May 17:13:36"} 
-{ "date" TODO "", 	"time":"27. May 07:59:51"} 
-{ "date" TODO "", 	"time":"27. May 11:25:26"} 
-{ "date" TODO "", 	"time":"28. May 08:14:51"} 
-{ "date" TODO "", 	"time":"29. May 11:05:38"} 
-{ "date" TODO "", 	"time":"29. May 13:47:39"} 
-{ "date" TODO "", 	"time":"29. May 14:35:44"} 
-{ "date" TODO "", 	"time":"31. May 07:39:40"} 
-{ "date" TODO "", 	"time":"31. May 11:36:28"} 
-{ "date" TODO "", 	"time":"31. May 15:43:04"} 
-{ "date" TODO "", 	"time":"01. June 15:52:50"} 
-{ "date" TODO "", 	"time":"02. June 13:05:48"} 
-{ "date" TODO "", 	"time":"02. June 15:59:29"} 
-{ "date" TODO "", 	"time":"03. June 08:12:44"} 
-{ "date" TODO "", 	"time":"03. June 11:32:45"} 
-{ "date" TODO "", 	"time":"03. June 13:00:39"} 
-{ "date" TODO "", 	"time":"03. June 16:56:10"} 
-{ "date" TODO "", 	"time":"04. June 08:51:18"} 
-{ "date" TODO "", 	"time":"04. June 10:28:07"} 
-{ "date" TODO "", 	"time":"04. June 15:31:08"} 
-{ "date" TODO "", 	"time":"04. June 15:37:16"} 
-{ "date" TODO "", 	"time":"05. June 04:28:28"} 
-{ "date" TODO "", 	"time":"05. June 06:28:07"} 
-{ "date" TODO "", 	"time":"05. June 10:01:30"} 
-{ "date" TODO "", 	"time":"05. June 16:18:21"} 
-{ "date" TODO "", 	"time":"06. June 10:33:45"} 
-{ "date" TODO "", 	"time":"06. June 17:50:51"} 
-{ "date" TODO "", 	"time":"07. June 19:03:18"} 
-{ "date" TODO "", 	"time":"07. June 19:18:15"} 
-{ "date" TODO "", 	"time":"07. June 21:52:29"} 
-{ "date" TODO "", 	"time":"10. June 21:08:54"} 
-{ "date" TODO "", 	"time":"13. June 18:47:43"} 
-{ "date" TODO "", 	"time":"17. June 10:52:54"} 
-{ "date" TODO "", 	"time":"18. June 10:54:05"} 
-{ "date" TODO "", 	"time":"18. June 13:09:56"} 
-{ "date" TODO "", 	"time":"21. June 10:37:07"} 
-{ "date" TODO "", 	"time":"25. June 14:38:30"} 
-{ "date" TODO "", 	"time":"26. June 04:32:25"} 
-{ "date" TODO "", 	"time":"27. June 15:39:45"} 
-{ "date" TODO "", 	"time":"29. June 10:46:25"} 
-{ "date" TODO "", 	"time":"30. June 10:11:53"} 
-{ "date" TODO "", 	"time":"02. July 11:22:56"} 
-{ "date" TODO "", 	"time":"04. July 06:27:21"} 
-{ "date" TODO "", 	"time":"06. July 07:44:38"} 
-{ "date" TODO "", 	"time":"12. July 16:51:24 "}
+1:04. March 10:02:17
+2:04. March 12:12:04
+3:04. March 13:52:08
+4:04. March 14:57:47
+1:04. March 18:57:12
+2:04. March 18:57:51
+1:05. March 07:51:47
+2:05. March 10:12:27
+3:05. March 14:03:28
+4:05. March 15:39:52
+5:05. March 19:59:50
+1:06. March 09:39:16
+2:06. March 13:10:59
+3:06. March 17:31:59
+1:07. March 08:12:28
+2:07. March 10:26:44
+3:07. March 12:33:38
+4:07. March 14:44:18
+5:07. March 15:47:20
+1:08. March 09:34:47
+2:08. March 11:40:14
+1:08. March 12:39:14
+2:08. March 13:03:03
+3:08. March 13:22:00
+4:08. March 15:27:55
+5:08. March 22:15:54
+1:09. March 14:22:45
+1:10. March 19:20:14
+1:11. March 10:01:39
+1:12. March 10:02:40
+2:12. March 14:04:08
+3:12. March 15:35:51
+4:12. March 18:48:23
+1:13. March 08:55:57
+2:13. March 11:09:43
+3:13. March 15:02:45
+1:14. March 09:55:50
+2:14. March 11:37:26
+3:14. March 12:20:27
+4:14. March 13:10:14
+5:14. March 15:10:02
+6:14. March 15:48:21
+1:15. March 10:21:41
+2:15. March 11:37:59
+3:15. March 12:54:29
+4:15. March 13:49:19
+5:15. March 17:08:04
+6:15. March 17:55:00
+7:15. March 19:22:43
+8:15. March 19:26:09
+9:15. March 19:34:38
+10:15. March 19:35:16
+11:15. March 19:41:23
+12:15. March 19:42:03
+13:15. March 19:42:44
+14:15. March 19:52:56
+15:15. March 20:21:02
+16:15. March 23:04:50
+1:16. March 13:58:54
+2:16. March 13:59:37
+3:16. March 14:02:08
+4:16. March 18:52:44
+5:16. March 20:22:21
+6:16. March 23:41:41
+1:17. March 00:33:13
+1:17. March 03:32:15
+2:17. March 12:57:19
+3:17. March 16:44:10
+1:18. March 09:00:46
+2:18. March 11:24:46
+3:18. March 15:00:10
+4:18. March 17:00:07
+1:19. March 10:08:48
+2:19. March 12:57:42
+3:19. March 14:05:35
+4:19. March 14:17:44
+5:19. March 14:47:04
+6:19. March 15:28:58
+7:19. March 19:01:48
+1:20. March 10:07:48
+2:20. March 10:15:38
+3:20. March 12:05:45
+4:20. March 12:40:30
+5:20. March 16:14:35
+6:20. March 17:23:23
+1:21. March 10:30:08
+2:21. March 12:07:54
+3:21. March 12:14:50
+4:21. March 12:53:12
+5:21. March 14:34:51
+6:21. March 14:48:32
+7:21. March 15:05:21
+1:22. March 08:26:43
+2:22. March 10:25:33
+3:22. March 14:34:50
+4:22. March 14:35:22
+1:23. March 10:15:40
+1:26. March 21:37:06
+2:26. March 21:42:46
+3:26. March 21:50:00
+4:26. March 21:58:44
+5:26. March 22:11:41
+1:02. April 12:51:38
+2:02. April 14:20:46
+1:03. April 09:09:56
+2:03. April 10:11:51
+3:03. April 14:10:10
+4:03. April 19:58:38
+1:04. April 08:44:14
+2:04. April 12:14:28
+3:04. April 14:03:03
+4:04. April 16:35:49
+1:05. April 10:36:24
+1:07. April 07:35:01
+2:07. April 13:39:20
+3:07. April 18:29:57
+1:08. April 07:10:56
+2:08. April 09:10:04
+3:08. April 11:22:48
+4:08. April 12:22:31
+5:08. April 17:24:38
+1:09. April 06:59:32
+2:09. April 09:55:18
+3:09. April 10:59:04
+4:09. April 14:09:52
+5:09. April 16:19:02
+6:09. April 17:14:35
+7:09. April 21:07:58
+1:10. April 06:57:17
+2:10. April 08:39:08
+3:10. April 09:58:36
+4:10. April 13:38:05
+1:11. April 09:24:44
+2:11. April 09:39:21
+3:11. April 10:43:21
+4:11. April 12:31:02
+5:11. April 15:28:49
+1:12. April 08:56:47
+2:12. April 10:27:22
+3:12. April 15:39:10
+4:12. April 16:17:29
+5:12. April 16:18:45
+6:12. April 16:20:47
+1:14. April 12:21:07
+1:15. April 08:14:05
+2:15. April 11:30:19
+3:15. April 11:38:27
+4:15. April 16:13:57
+1:16. April 07:56:49
+2:16. April 10:11:18
+3:16. April 13:57:06
+4:16. April 13:58:34
+5:16. April 16:53:10
+1:17. April 09:02:13
+2:17. April 11:36:36
+3:17. April 13:54:13
+4:17. April 18:28:06
+1:18. April 08:47:04
+2:18. April 14:21:22
+3:18. April 17:33:35
+1:19. April 06:46:32
+2:19. April 10:12:05
+3:19. April 11:06:02
+4:19. April 12:28:04
+5:19. April 13:52:00
+1:20. April 14:00:11
+2:20. April 16:25:11
+1:21. April 10:41:57
+1:22. April 07:58:28
+2:22. April 11:11:09
+3:22. April 12:07:02
+4:22. April 14:07:57
+5:22. April 15:20:19
+6:22. April 16:41:52
+1:23. April 09:13:57
+2:23. April 09:25:55
+3:23. April 12:12:19
+4:23. April 12:36:39
+5:23. April 14:18:21
+1:24. April 07:41:22
+2:24. April 08:31:04
+3:24. April 10:12:01
+4:24. April 17:35:45
+1:25. April 08:33:33
+2:25. April 10:25:34
+3:25. April 12:14:06
+4:25. April 13:31:14
+1:26. April 08:08:50
+2:26. April 10:07:03
+3:26. April 12:00:15
+1:28. April 09:55:10
+1:29. April 08:30:02
+2:29. April 12:35:56
+3:29. April 15:20:30
+1:30. April 09:29:35
+2:30. April 13:19:19
+3:30. April 16:09:58
+4:30. April 19:48:35
+1:01. May 10:12:13
+2:01. May 12:46:59
+3:01. May 14:59:41
+1:02. May 07:55:54
+2:02. May 15:09:34
+1:03. May 07:55:54
+2:03. May 11:12:16
+1:04. May 05:50:31
+1:05. May 09:54:24
+2:05. May 15:36:18
+3:05. May 18:50:19
+4:05. May 18:56:47
+1:06. May 08:00:00
+2:06. May 11:58:32
+3:06. May 16:54:02
+1:07. May 07:48:09
+2:07. May 10:36:45
+3:07. May 11:37:34
+4:07. May 13:59:19
+5:07. May 15:07:35
+1:08. May 07:55:34
+2:08. May 09:59:31
+3:08. May 11:58:00
+4:08. May 12:15:21
+5:08. May 13:39:24
+1:09. May 08:36:22
+2:09. May 12:26:05
+3:09. May 14:46:44
+4:09. May 17:19:12
+1:10. May 08:07:28
+2:10. May 12:47:57
+3:10. May 13:49:56
+4:10. May 14:42:35
+1:11. May 09:55:40
+2:11. May 13:38:50
+3:11. May 15:12:24
+1:12. May 09:42:43
+2:12. May 11:40:33
+3:12. May 13:36:38
+4:12. May 15:35:27
+1:13. May 09:18:48
+2:13. May 10:56:31
+3:13. May 11:50:32
+4:13. May 15:32:42
+1:14. May 08:21:05
+2:14. May 08:54:29
+3:14. May 12:45:11
+4:14. May 13:18:39
+5:14. May 13:23:57
+1:15. May 08:09:01
+2:15. May 10:17:52
+3:15. May 12:01:26
+4:15. May 13:04:41
+5:15. May 13:06:43
+6:15. May 16:14:31
+1:16. May 07:37:59
+2:16. May 13:43:30
+3:16. May 15:26:06
+1:17. May 08:31:04
+1:18. May 11:14:42
+2:18. May 14:25:19
+3:18. May 14:29:11
+4:18. May 15:11:56
+1:19. May 09:47:40
+2:19. May 18:18:12
+1:20. May 10:02:28
+1:21. May 08:03:32
+2:21. May 12:41:47
+3:21. May 14:06:35
+4:21. May 16:43:41
+5:21. May 16:51:09
+1:22. May 08:41:47
+2:22. May 10:34:27
+3:22. May 13:08:34
+4:22. May 13:58:45
+5:22. May 14:47:19
+6:22. May 16:55:04
+7:22. May 17:47:13
+1:23. May 08:18:39
+2:23. May 14:19:54
+3:23. May 16:32:33
+4:23. May 17:39:52
+5:23. May 17:43:34
+1:24. May 08:01:54
+2:24. May 12:10:49
+3:24. May 12:17:47
+4:24. May 18:37:06
+1:25. May 08:53:12
+1:26. May 07:57:36
+2:26. May 15:06:31
+3:26. May 17:13:36
+1:27. May 07:59:51
+2:27. May 11:25:26
+1:28. May 08:14:51
+1:29. May 11:05:38
+2:29. May 13:47:39
+3:29. May 14:35:44
+1:31. May 07:39:40
+2:31. May 11:36:28
+3:31. May 15:43:04
+1:01. June 15:52:50
+1:02. June 13:05:48
+2:02. June 15:59:29
+1:03. June 08:12:44
+2:03. June 11:32:45
+3:03. June 13:00:39
+4:03. June 16:56:10
+1:04. June 08:51:18
+2:04. June 10:28:07
+3:04. June 15:31:08
+4:04. June 15:37:16
+1:05. June 04:28:28
+2:05. June 06:28:07
+3:05. June 10:01:30
+4:05. June 16:18:21
+1:06. June 10:33:45
+2:06. June 17:50:51
+1:07. June 19:03:18
+2:07. June 19:18:15
+3:07. June 21:52:29
+1:10. June 21:08:54
+1:13. June 18:47:43
+1:17. June 10:52:54
+1:18. June 10:54:05
+2:18. June 13:09:56
+1:21. June 10:37:07
+1:25. June 14:38:30
+1:26. June 04:32:25
+1:27. June 15:39:45
+1:29. June 10:46:25
+1:30. June 10:11:53
+1:02. July 11:22:56
+1:04. July 06:27:21
+1:06. July 07:44:38
+1:12. July 16:51:24
