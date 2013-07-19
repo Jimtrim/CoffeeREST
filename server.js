@@ -2,7 +2,7 @@ var express = require('express')
   , routes = require('./routes')
   , coffee = require('./routes/coffee')
   , http = require('http')
-  , path = require('path');
+  , path = require('path')
 
 var app = express();
 
@@ -24,8 +24,8 @@ if ('development' == app.get('env')) {
 
 app.get('/', routes.index);
 app.get('/coffee', coffee.index);
-app.get('/coffee/online', coffee.online.index);
-app.get('/coffee/online/all', coffee.online.index);
+app.get('/coffee/:collection', coffee.coll.index);
+app.get('/coffee/:collection/all', coffee.coll.all);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
