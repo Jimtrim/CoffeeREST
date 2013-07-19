@@ -33,12 +33,15 @@ exports.coll = {
 		res.header("Content-Type", "application/json; charset=utf-8");
 		
 		console.log("Getting all pots from "+req.params.collection.toUpperCase());
-		console.log(db.collection(req.params.collection.toLowerCase()) );
 		db.collection(req.params.collection.toLowerCase(), function(err, collection) {
-			console.log("First callback: "+collection.findOne());
-			collection.find().limit(10).toArray(function(err, items) {
-				console.log("Last callback");
-				res.send(items);
+			collection.find().toArray(function(err, items) {
+				output = '{'
+					+ '"count" : ' + items.length + ','
+					+ '"pots" : ' + JSON.stringify(items) 
+					+ '}';
+
+				res.setHeader("Content-Type", "application/json");
+				res.end(output);
 			});
 		});
 	},

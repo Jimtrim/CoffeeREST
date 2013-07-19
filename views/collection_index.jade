@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1= title
+  p Velkommen til #{title}
+  p Herfra kan du gå til
+  ul
+    li 
+      a(href="all/") all/
+      span , som vil gi deg alle kaffekannene til #{title}
+    li 
+      a(href="20130101/") {timestamp}/
+      span , som vil gi deg alle kaffekannene til #{title} nyere enn timestamp
