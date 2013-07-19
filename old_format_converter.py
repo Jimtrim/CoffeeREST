@@ -11,21 +11,44 @@
 #!/usr/bin/env python
 
 import time
+from urllib2 import urlopen
 from datetime import datetime
-
-def main(filename="testdata.txt"):
-    f = open(filename, 'r')
-
-    line = f.readline().strip().split(":", 1)
-    while len(line)>1:
-        print line
-        line = datetime.strptime(
-                line[1] + " 2012"
-                , "%d. %B %H:%M:%S %Y")
+from pymongo import MongoClient
 
 
-        print line
-        line = f.readline().strip().split(":", 1)
+
+def main(uri="http://draug.online.ntnu.no/coffee_log.txt",
+            ip='127.0.0.1',
+            port=27018,
+            dbName='coffee',
+            collectionName='online'
+        ):
+    f = urlopen(uri)
+    lines = f.readlines()
+    f.close()
+
+    client = MongoClient(ip, port)
+    db = client[dbName]
+    collection = db[collectionName]
+
+    print 'Connected to', ip, ' in database', dbName,\
+            'with collection', collectionName
+
+    for line in lines:
+        line = line.strip().split(":", 1)
+        try:
+            line = datetime.strptime(str(line[1]) + " 2013", "%d. %B %H:%M:%S %Y")
+        except ValueError:
+            try:
+                line = datetime.strptime(str(line[1]), "%d. %B %Y %H:%M:%S")
+            except ValueError:
+                print 'VALUE ERROR'
+
+        # Check wether the exact timestamp exists in the database
+        if not (collection.find_one({"date": line })):
+            print "NOT A MATCH"
+            assert(collection.insert({"date": line }))
+
     print 'DONE'
 
     f.close()
