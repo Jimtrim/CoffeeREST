@@ -1,3 +1,4 @@
 *~
 *.pycnode_modules/
 
+.vagrant/
