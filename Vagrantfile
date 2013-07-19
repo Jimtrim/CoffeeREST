@@ -1,15 +1,11 @@
-# -*- mode: ruby -*-
-# vi: set ft=ruby :
+Vagrant::Config.run do |config|
+  config.vm.box     = "base"
+  config.vm.box_url = "http://files.vagrantup.com/lucid64.box"
 
+  # config.vm.network "33.33.33.10"
+  config.vm.forward_port 27017, 27018
 
-
-Vagrant.configure("2") do |config|
-  # All Vagrant configuration is done here. The most common configuration
-  # options are documented and commented below. For a complete reference,
-  # please see the online documentation at vagrantup.com.
-
-  # Every Vagrant virtual environment requires a box to build off of.
-  config.vm.box = "base"
-  config.vm.provision :shell, :path => "vagrant_setup.sh"
-
+  
+  config.vm.provision :shell, :path => "setup_vagrant.sh"
+  
 end
