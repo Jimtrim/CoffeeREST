@@ -18,8 +18,8 @@ from pymongo import MongoClient
 
 
 def main(uri="http://draug.online.ntnu.no/coffee_log.txt",
-            ip='192.168.40.50',
-            port=27018,
+            ip='127.0.0.1',
+            port=27017,
             dbName='coffee',
             collectionName='online'
         ):
