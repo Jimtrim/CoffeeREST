@@ -1,9 +1,12 @@
-var express = require('express')
-  , routes = require('./routes')
-  , coffee = require('./routes/coffee')
-  , http = require('http')
-  , path = require('path')
-  , config = require('./config');
+/*global require, process, __dirname, */
+
+var express = require('express'), 
+  routes = require('./routes'), 
+  coffee = require('./routes/coffee'), 
+  http = require('http'), 
+  path = require('path'), 
+  config = require('./config'),
+  db = require('mongodb');;
 
 var app = express();
  
@@ -25,6 +28,7 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
+
 app.get('/', routes.index);
 app.get('/coffee', coffee.index);
 app.get('/coffee/:collection', coffee.coll.index);
@@ -32,6 +36,9 @@ app.get('/coffee/:collection/all', coffee.coll.all);
 app.get('/coffee/:collection/latest', coffee.coll.latest);
 app.get('/coffee/:collection/latest.txt', coffee.coll.latest_txt);
 app.get('/coffee/:collection/:timestamp', coffee.coll.since);
+
+app.post('/coffee/:collection/add', coffee.coll.addPot);
+
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
