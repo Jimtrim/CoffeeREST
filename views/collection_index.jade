@@ -1,13 +1,28 @@
 extends layout
 
 block content
-  h1= title
-  p Velkommen til #{title}
+  h1 #{unit} - kaffe
+  p Velkommen til #{unit} sin kaffestats
   p Herfra kan du gå til
   ul
     li 
-      a(href="all/") all/
-      span , som vil gi deg alle kaffekannene til #{title}
+      a(href="#{unit}/all") #{unit}/all/
+      span , som vil gi deg alle kaffekannene til #{unit}.
     li 
-      a(href="20130101/") {timestamp}/
-      span , som vil gi deg alle kaffekannene til #{title} nyere enn timestamp
+      a(href="#{unit}/latest") #{unit}/latest/
+      span , som vil gi deg den nyeste kannen til #{unit}.
+    li 
+      a(href="#{unit}/latest.txt") #{unit}/latest.txt/
+      span , som vil gi deg alle kaffekannene til #{unit} i txt-format.
+    li
+      a(href="#{unit}/since/1379509200") #{unit}/since/[UNIX_TIMESTAMP]
+      span , som vil gi deg alle kaffekannene til #{unit} nyere enn timestamp (UNIX).
+    li 
+      a(href="#{unit}/since/2013/10/01/") #{unit}/since/YYYY/MM/DD/
+      span , som vil gi deg alle kaffekannene til #{unit} nyere enn timestamp (YYYY/MM/DD).
+  p Annet nyttig
+  ul
+    li POST 
+      a(href="#{unit}/add/") #{unit}/add/
+      span er link for å kunne legge til ny kanne. Krever JSON-body i form av {"collection":"#{unit}"}
+
