@@ -1,4 +1,4 @@
-/*global require, process, __dirname, */
+/*global require, process, __dirname, console */
 
 var express = require('express'), 
   routes = require('./routes'), 
@@ -6,7 +6,7 @@ var express = require('express'),
   http = require('http'), 
   path = require('path'), 
   config = require('./config'),
-  db = require('mongodb');;
+  db = require('mongodb');
 
 var app = express();
  
@@ -31,13 +31,15 @@ if ('development' == app.get('env')) {
 
 app.get('/', routes.index);
 app.get('/coffee', coffee.index);
-app.get('/coffee/:collection', coffee.coll.index);
-app.get('/coffee/:collection/all', coffee.coll.getAllPots);
-app.get('/coffee/:collection/latest', coffee.coll.getLatestPotJSON);
-app.get('/coffee/:collection/latest.txt', coffee.coll.getLatestPotTXT);
-app.get('/coffee/:collection/:timestamp', coffee.coll.since);
+app.get('/coffee/:collection', coffee.rest.index);
+app.get('/coffee/:collection/all', coffee.rest.getAllPots);
+app.get('/coffee/:collection/latest', coffee.rest.getLatestPotJSON);
+app.get('/coffee/:collection/latest.txt', coffee.rest.getLatestPotTXT);
+app.get('/coffee/:collection/since/:timestamp', coffee.rest.sinceUNIX);
+app.get('/coffee/:collection/since/:year/:month/:day', coffee.rest.since);
 
-app.post('/coffee/:collection/add', coffee.coll.addPot);
+
+app.post('/coffee/:collection/add', coffee.rest.addPot);
 
 
 http.createServer(app).listen(app.get('port'), function(){

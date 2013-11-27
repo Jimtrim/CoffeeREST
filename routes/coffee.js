@@ -47,7 +47,7 @@ coffeeAPI.util = {
     
     "potsToJSON": function(collectionName, pots) {
         return '{' +
-                '"unit" : ' + collectionName + ', ' +
+                '"unit" : "' + collectionName + '" ,' +
                 '"count" : ' + pots.length + ',' +
                 '"pots" : ' + JSON.stringify(pots) +
         '}';
@@ -88,13 +88,26 @@ coffeeAPI.db = {
 		console.log("Getting all pots from "+collectionName.toUpperCase());
         
 		db.collection(collectionName.toLowerCase(), function(err, collection) {
-			collection.find().toArray(function(err, pots) {
+			collection.find().sort({"date":-1}).toArray(function(err, pots) {
                  if (typeof callback === "function") {
                     callback(err, pots);
                 }
 			});
 		});
 	},
+    
+    "getAllPotsSinceUNIX": function(collectionName, date, callback) {
+         db.collection(collectionName.toLowerCase(), function(err, collection) {
+			collection.find({"date": {$gt : date}})
+                    .sort({"date":-1})
+                    .toArray(function(err, pots) {
+                if (typeof callback === "function") {
+                    callback(err, pots);
+                }
+			});
+            
+		});
+    }
     
 };
 
@@ -103,9 +116,6 @@ coffeeAPI.db = {
  * HTTP-methods
  **/
 
-/* GET users listing. */
-var output;
-
 /* GET Coffee index (should list active collections)*/
 exports.index = function(req, res){
 	res.send("<h1>It works!</h1> <p>Welcome to CoffeREst</p>");
@@ -113,7 +123,7 @@ exports.index = function(req, res){
 
 
 // Tenk at en linjeforening == en coll(ection)
-exports.coll = {
+exports.rest = {
     /* GET unit index */
 	"index": function(req, res){
 		res.setHeader("Content-type", "text/html; charset=utf-8");
@@ -146,21 +156,49 @@ exports.coll = {
                 var output = item[0].numberThisDay + "\n" + coffeeAPI.util.getOldFormatFromDate(item[0].date);
                 res.end(output);
             } else {
-                res.status(404);
-                res.end("no pots found for: "+req.params.collection);
+                res.status(204);
+                res.end("No pots found for: "+req.params.collection);
             }
         });
 	},
     
+    "since": function(req, res) {
+        var year = parseInt(req.params.year, 10);
+        var month = parseInt(req.params.month, 10);
+        var day = parseInt(req.params.day, 10);
+        
+        // TODO: fix sloppyness
+        if(year>1970 && 0 <= month && month <= 12 && 0 <= day && day <=31 ) {
+            var date = new Date(year, month-1, day);
+            coffeeAPI.db.getAllPotsSinceUNIX(req.params.collection, date, function(err, pots) {
+                res.status(200);
+                res.setHeader("Content-Type", "application/json; charset=utf-8");
+                res.end( coffeeAPI.util.potsToJSON(req.params.collection, pots) );
+            });
+        } else {
+            res.setHeader("Content-Type", "text/plain; charset=utf-8");
+            res.status(400);
+            res.end("Invalid date: "+req.params.year+"/"+req.params.month+"/"+req.params.day+".");
+        }
+        
+    },
+    
+    
     /* GET all pots newer than a given timestamp */
-	"since":function(req, res) {
-		// TODO: Implementere
-		res.status(501);
-		res.end(); 
+	"sinceUNIX":function(req, res) {
+        // God test-timestamp: 1379509200 (18. Sept 2013, 13:00:00)
+        var date = new Date(req.params.timestamp*1000);
+		
+        coffeeAPI.db.getAllPotsSinceUNIX(req.params.collection, date, function(err, pots) {
+            res.status(200);
+            res.setHeader("Content-Type", "application/json; charset=utf-8");
+            res.end( coffeeAPI.util.potsToJSON(req.params.collection, pots) );
+        });
 	},
     
+    
     /* POST */
-    "addPot":function(req, res, next) {
+    "addPot" : function(req, res, next) {
         // TODO: add auth
         db.collection(req.params.collection.toLowerCase(), function(err, collection) {
             
