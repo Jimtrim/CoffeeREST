@@ -113,6 +113,12 @@ coffeeAPI.db = {
                 });
             });
         });
+    },
+    
+    "deleteById": function (collectionName, id, callback) {
+        db.collection(collectionName.toLowerCase(), function(err, collection) {
+            collection.remove({"_id": id});
+        });
     }
     
 };
@@ -221,15 +227,16 @@ exports.rest = {
                 res.end("Invalid input, should be in the form: \"{\"collection\": \"<UNION>\"} \"");
             }
             
-            console.log("BOOLEAN: "+ (req.params.collection.toLowerCase() == json_data.collection.toLowerCase()) );
             if ( req.params.collection.toLowerCase() == json_data.collection.toLowerCase() ) {
                 // TODO: add support for specifying date to insert
                 
                 var date = new Date();
                 
                 coffeeAPI.db.addNewPot(req.params.collection, date, function() {
-                    res.status(201);
-                    res.end(data);
+                    coffeeAPI.db.getLatestPot(req.params.collection, function(err, pot) {
+                        res.status(201);
+                        res.end(JSON.stringify(pot));
+                    });
                 });
                 
             } else {
@@ -238,6 +245,43 @@ exports.rest = {
             }
         });
     }, 
+    
+    
+    /* DELETE (ONLY for test) */
+    // {"_id":"?????", "HarJegLov":"Jada"}
+    
+    "delete" : function(req, res, next) {
+        var data = "";
+        
+        req.addListener("data", function(chunk) {
+            if (chunk) data += chunk;
+        });
+     
+        req.addListener("end", function() {
+            var json_data = JSON.parse("{}");
+            try {
+                json_data = JSON.parse(data);
+            } catch (e) {
+                res.status(400);
+                res.end("Invalid input, should be in the form: \"{\"collection\": \"<UNION>\"} \"");
+            }
+            
+            if ( json_data.HarJegLov == "Jada") {
+                // TODO: add support for specifying date to insert
+                
+                
+                coffeeAPI.db.deleteByID(req.params.collection, json_data._id, function() {
+                    res.status(204);
+                    res.end("Deleted");
+                });
+                
+            } else {
+                res.status(500);
+                res.end("CoffeREST-error, find a codemonkey to fix!");
+            }
+        });
+    },
+    
 };
  
  
