@@ -30,14 +30,12 @@ var coffeeAPI = {};
 
 coffeeAPI.util = {
     /* helper: convert JSON pot to old TXT-format */
-    
-    "monthNames": [ "January", "February", "March", "April", "May", "June", "July", "August", 
-                   "September", "October", "November", "December" ],
-    
     "getOldFormatFromDate": function(date) {
+        var monthNames =  [ "January", "February", "March", "April", "May", "June", "July", "August", 
+                   "September", "October", "November", "December" ];
             
         var txt = date.getDate() + ". " + 
-            coffeeAPI.util.monthNames[date.getMonth()] + " " +
+            monthNames[date.getMonth()] + " " +
             date.getFullYear() + " " +
             ((date.getHours() < 10) ? "0" : "") + date.getHours() + ":" + 
             ((date.getMinutes() < 10) ? "0" : "") + date.getMinutes() + ":" +  
@@ -45,10 +43,14 @@ coffeeAPI.util = {
         return txt;
     }, 
     
+    // format JSON-coffee in one way, no matter how many or few
     "potsToJSON": function(collectionName, pots) {
+        
+        var count = pots.length || (pots.date ? 1 : 0);
+        
         return '{' +
                 '"unit" : "' + collectionName + '" ,' +
-                '"count" : ' + pots.length + ',' +
+                '"count" : ' + count + ',' +
                 '"pots" : ' + JSON.stringify(pots) +
         '}';
     },
@@ -56,21 +58,17 @@ coffeeAPI.util = {
 };
 
 coffeeAPI.db = {
-    /* Helper for getting latest pot from a collection, regardless of format*/
-    // TODO: create error-handling for undefined callback.
     
-    /**
-     * getLatestPot(String collectionName, function(err, pots) {...} );
-     *
-     * Input-function should format a HTTP-response
-     * Returns a array with 0 or 1 element.
-     */
+    /* Returns the latest element in a given collection */
     "getLatestPot": function(collectionName, callback) {
 		console.log("Getting freshest pot from "+collectionName.toUpperCase());
         
 		db.collection(collectionName.toLowerCase(), function(err, collection) {
 			/* Ugly hack while waiting for native MongoDB.collection.MAX(field) */
-			collection.find().sort({"date":-1}).limit(1).toArray(function(err, pot) {
+			collection.find().sort({"date":-1}).limit(1).toArray(function(err, pots) {
+                
+                var pot = (pots.length > 0 ? pots[0] : undefined ) ;
+                
                 if (typeof callback === "function") {
                     callback(err, pot);
                 }
@@ -78,12 +76,7 @@ coffeeAPI.db = {
 		});
     },
     
-    /**
-     * getLatestPot(String collectionName, function(err, pots) {...} ;
-     *
-     * input-function should format a HTTP-response
-     * returns array with 0 to infinite(ish) elements
-     */
+    /* Returns a list of all pots from given collection */
     "getAllPots": function(collectionName, callback){
 		console.log("Getting all pots from "+collectionName.toUpperCase());
         
@@ -107,6 +100,19 @@ coffeeAPI.db = {
 			});
             
 		});
+    },
+    
+    "addNewPot": function (collectionName, date, callback) {
+        db.collection(collectionName.toLowerCase(), function(err, collection) {
+            coffeeAPI.db.getLatestPot(collectionName.toLowerCase(), function(err, last_pot) {
+                var newNumberThisDay = last_pot.numberThisDay || 0;
+                newNumberThisDay += 1;
+                
+                collection.insert({"numberThisDay" : newNumberThisDay+1, "date" : date.toJSON()}, function(err, results, next){
+                    callback();
+                });
+            });
+        });
     }
     
 };
@@ -141,19 +147,21 @@ exports.rest = {
     
     /* GET latest pot from given unit */
 	"getLatestPotJSON":function(req, res) {
-        coffeeAPI.db.getLatestPot(req.params.collection, function(err, pots) {
+        coffeeAPI.db.getLatestPot(req.params.collection, function(err, pot) {
+            pot = pot || {}; // fix for undefined units
             res.setHeader("Content-Type", "application/json; charset=utf-8");
-            res.end( coffeeAPI.util.potsToJSON(req.params.collection, pots) );
+            res.end( coffeeAPI.util.potsToJSON(req.params.collection, pot) );
         });
 	},
     
     /* GET latest pot from given unit as a .txt-file */
 	"getLatestPotTXT":function(req, res) {
-        coffeeAPI.db.getLatestPot(req.params.collection, function(err, item) {
+        coffeeAPI.db.getLatestPot(req.params.collection, function(err, pot) {
             res.setHeader("Content-Type", "text/plain; charset=utf-8");
             
-            if (item.length > 0) {
-                var output = item[0].numberThisDay + "\n" + coffeeAPI.util.getOldFormatFromDate(item[0].date);
+            if (pot) {
+                var output = pot.numberThisDay + "\n" + coffeeAPI.util.getOldFormatFromDate(pot.date);
+                res.status(200);
                 res.end(output);
             } else {
                 res.status(204);
@@ -180,14 +188,13 @@ exports.rest = {
             res.status(400);
             res.end("Invalid date: "+req.params.year+"/"+req.params.month+"/"+req.params.day+".");
         }
-        
     },
     
     
     /* GET all pots newer than a given timestamp */
 	"sinceUNIX":function(req, res) {
         // God test-timestamp: 1379509200 (18. Sept 2013, 13:00:00)
-        var date = new Date(req.params.timestamp*1000);
+        var date = new Date(req.params.timestamp*1000); // sec2ms
 		
         coffeeAPI.db.getAllPotsSinceUNIX(req.params.collection, date, function(err, pots) {
             res.status(200);
@@ -199,16 +206,36 @@ exports.rest = {
     
     /* POST */
     "addPot" : function(req, res, next) {
-        // TODO: add auth
-        db.collection(req.params.collection.toLowerCase(), function(err, collection) {
+        var data = "";
+        
+        req.addListener("data", function(chunk) {
+            if (chunk) data += chunk;
+        });
+     
+        req.addListener("end", function() {
+            var json_data = JSON.parse("{}");
+            try {
+                json_data = JSON.parse(data);
+            } catch (e) {
+                res.status(400);
+                res.end("Invalid input, should be in the form: \"{\"collection\": \"<UNION>\"} \"");
+            }
             
-            
-            collection.insert({"date":new Date().toJSON()}, function(e, results, next){
-                if (e) 
-                    return next(e);
-                res.status(201);
-                res.end(results);
-            });
+            console.log("BOOLEAN: "+ (req.params.collection.toLowerCase() == json_data.collection.toLowerCase()) );
+            if ( req.params.collection.toLowerCase() == json_data.collection.toLowerCase() ) {
+                // TODO: add support for specifying date to insert
+                
+                var date = new Date();
+                
+                coffeeAPI.db.addNewPot(req.params.collection, date, function() {
+                    res.status(201);
+                    res.end(data);
+                });
+                
+            } else {
+                res.status(500);
+                res.end("CoffeREST-error, find a codemonkey to fix!");
+            }
         });
     }, 
 };
