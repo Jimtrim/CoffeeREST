@@ -32,9 +32,9 @@ if ('development' == app.get('env')) {
 app.get('/', routes.index);
 app.get('/coffee', coffee.index);
 app.get('/coffee/:collection', coffee.coll.index);
-app.get('/coffee/:collection/all', coffee.coll.all);
-app.get('/coffee/:collection/latest', coffee.coll.latest);
-app.get('/coffee/:collection/latest.txt', coffee.coll.latest_txt);
+app.get('/coffee/:collection/all', coffee.coll.getAllPots);
+app.get('/coffee/:collection/latest', coffee.coll.getLatestPotJSON);
+app.get('/coffee/:collection/latest.txt', coffee.coll.getLatestPotTXT);
 app.get('/coffee/:collection/:timestamp', coffee.coll.since);
 
 app.post('/coffee/:collection/add', coffee.coll.addPot);

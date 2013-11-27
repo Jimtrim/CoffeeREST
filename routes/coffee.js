@@ -21,22 +21,86 @@ db.open(function(err, db) {
  * Formatting methods
  **/
 
-var getOldFormatFromDate = function(date) {
-	var monthNames = [ "January", "February", "March", "April", "May", "June",
-		"July", "August", "September", "October", "November", "December" ];
-		
-	var txt = date.getDate() + ". " + 
-        monthNames[date.getMonth()] + " " +
-		date.getFullYear() + " " +
-		((date.getHours() < 10) ? "0" : "") + date.getHours() + ":" + 
-		((date.getMinutes() < 10) ? "0" : "") + date.getMinutes() + ":" +  
-		((date.getSeconds() < 10) ? "0" : "") + date.getSeconds();
-	return txt;
-};
 
 
 /**
  * API-methods
+ **/
+var coffeeAPI = {};
+
+coffeeAPI.util = {
+    /* helper: convert JSON pot to old TXT-format */
+    
+    "monthNames": [ "January", "February", "March", "April", "May", "June", "July", "August", 
+                   "September", "October", "November", "December" ],
+    
+    "getOldFormatFromDate": function(date) {
+            
+        var txt = date.getDate() + ". " + 
+            coffeeAPI.util.monthNames[date.getMonth()] + " " +
+            date.getFullYear() + " " +
+            ((date.getHours() < 10) ? "0" : "") + date.getHours() + ":" + 
+            ((date.getMinutes() < 10) ? "0" : "") + date.getMinutes() + ":" +  
+            ((date.getSeconds() < 10) ? "0" : "") + date.getSeconds();
+        return txt;
+    }, 
+    
+    "potsToJSON": function(collectionName, pots) {
+        return '{' +
+                '"unit" : ' + collectionName + ', ' +
+                '"count" : ' + pots.length + ',' +
+                '"pots" : ' + JSON.stringify(pots) +
+        '}';
+    },
+    
+};
+
+coffeeAPI.db = {
+    /* Helper for getting latest pot from a collection, regardless of format*/
+    // TODO: create error-handling for undefined callback.
+    
+    /**
+     * getLatestPot(String collectionName, function(err, pots) {...} );
+     *
+     * Input-function should format a HTTP-response
+     * Returns a array with 0 or 1 element.
+     */
+    "getLatestPot": function(collectionName, callback) {
+		console.log("Getting freshest pot from "+collectionName.toUpperCase());
+        
+		db.collection(collectionName.toLowerCase(), function(err, collection) {
+			/* Ugly hack while waiting for native MongoDB.collection.MAX(field) */
+			collection.find().sort({"date":-1}).limit(1).toArray(function(err, pot) {
+                if (typeof callback === "function") {
+                    callback(err, pot);
+                }
+			});
+		});
+    },
+    
+    /**
+     * getLatestPot(String collectionName, function(err, pots) {...} ;
+     *
+     * input-function should format a HTTP-response
+     * returns array with 0 to infinite(ish) elements
+     */
+    "getAllPots": function(collectionName, callback){
+		console.log("Getting all pots from "+collectionName.toUpperCase());
+        
+		db.collection(collectionName.toLowerCase(), function(err, collection) {
+			collection.find().toArray(function(err, pots) {
+                 if (typeof callback === "function") {
+                    callback(err, pots);
+                }
+			});
+		});
+	},
+    
+};
+
+
+/**
+ * HTTP-methods
  **/
 
 /* GET users listing. */
@@ -50,71 +114,45 @@ exports.index = function(req, res){
 
 // Tenk at en linjeforening == en coll(ection)
 exports.coll = {
-    /* GET */
+    /* GET unit index */
 	"index": function(req, res){
 		res.setHeader("Content-type", "text/html; charset=utf-8");
 		res.render("collection_index", {title: req.params.collection});
         res.end();
 	},
     
-    /* GET */
-	"all": function(req, res){
-		res.setHeader("Content-Type", "application/json; charset=utf-8");
-		
-		console.log("Getting all pots from "+req.params.collection.toUpperCase());
-		db.collection(req.params.collection.toLowerCase(), function(err, collection) {
-			collection.find().toArray(function(err, items) {
-				output = '{' +
-					'"count" : ' + items.length + ',' +
-					'"pots" : ' + JSON.stringify(items) +
-				'}';
-
-				res.end(output);
-			});
-		});
+    /* GET all pots from given unit */
+	"getAllPots": function(req, res){  
+        coffeeAPI.db.getAllPots(req.params.collection, function(err, pots) {
+            res.setHeader("Content-Type", "application/json; charset=utf-8");
+            res.end( coffeeAPI.util.potsToJSON(req.params.collection, pots) );
+        });
 	},
     
-    /* GET */
-	"latest":function(req, res) {
-		res.setHeader("Content-Type", "application/json; charset=utf-8");
-		
-		console.log("Getting freshest pot from "+req.params.collection.toUpperCase());
-		db.collection(req.params.collection.toLowerCase(), function(err, collection) {
-			/* Ugly hack while waiting for native MongoDB.collection.MAX(field) */
-			collection.find().sort({"date":-1}).limit(1).toArray(function(err, item) {
-				output = '{' +
-					'"count" : ' + item.length + ',' +
-					'"pots" : ' + JSON.stringify(item) +
-					'}';
-
-				res.end(output);
-			});
-		});
+    /* GET latest pot from given unit */
+	"getLatestPotJSON":function(req, res) {
+        coffeeAPI.db.getLatestPot(req.params.collection, function(err, pots) {
+            res.setHeader("Content-Type", "application/json; charset=utf-8");
+            res.end( coffeeAPI.util.potsToJSON(req.params.collection, pots) );
+        });
 	},
     
-    /* GET */
-	"latest_txt":function(req, res) {
-		res.setHeader("Content-Type", "text/plain; charset=utf-8");
-		
-		console.log("Getting freshest pot from "+req.params.collection.toUpperCase());
-		db.collection(req.params.collection.toLowerCase(), function(err, collection) {
-		
-			/* Ugly hack while waiting for native MongoDB.collection.MAX(field) */
-			collection.find().sort({"date":-1}).limit(1).toArray(function(e, items, next) {
-				if (e) 
-                    return next(e);
-                
-                var item = items[0];
-                console.log(item);	
-                var output = item.numberThisDay + "\n" +
-                        getOldFormatFromDate(item.date);
-
+    /* GET latest pot from given unit as a .txt-file */
+	"getLatestPotTXT":function(req, res) {
+        coffeeAPI.db.getLatestPot(req.params.collection, function(err, item) {
+            res.setHeader("Content-Type", "text/plain; charset=utf-8");
+            
+            if (item.length > 0) {
+                var output = item[0].numberThisDay + "\n" + coffeeAPI.util.getOldFormatFromDate(item[0].date);
                 res.end(output);
-			});
-		});
+            } else {
+                res.status(404);
+                res.end("no pots found for: "+req.params.collection);
+            }
+        });
 	},
     
-    /* GET */
+    /* GET all pots newer than a given timestamp */
 	"since":function(req, res) {
 		// TODO: Implementere
 		res.status(501);
