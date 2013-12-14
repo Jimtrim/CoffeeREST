@@ -12,10 +12,11 @@ like Arduino or Raspberry Pi.
 Setup
 -----
 
-To set up a working database, run:
+To set up a working database, install MongoDB and edit config.js with ip and port of the database, and the name of the MongoDB collection.
 
-    vagrant up
-    python util/CoffeeTXT2CoffeeDB.py
+To get some sample data, run
+
+    python util/CoffeeTxt2CoffeeDB.py
 
 To start the server, run:
 
