@@ -5,6 +5,7 @@ Description
 -----------
 
 RESTful service beeing able to distibute information about coffee pots 
+DETTE ER EN ANNEN LINJE FRA ET ANNET STED
 brewed on Gløshaugen, and be able to recieve data from several devices, 
 like Arduino or Raspberry Pi.
 
